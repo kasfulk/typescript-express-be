@@ -1,4 +1,4 @@
-import express, { Application } from 'express';
+import express, { Application, json } from 'express';
 import cors from 'cors';
 
 export default class App {
@@ -6,7 +6,7 @@ export default class App {
 
     public port: number;
 
-    constructor(controllers, port:number) {
+    constructor(controllers:any, port:number) {
       this.app = express();
       this.port = port;
 
@@ -15,17 +15,17 @@ export default class App {
     }
 
     private initializeMiddleware():void {
-      this.app.use(express.json());
+      this.app.use(json());
       this.app.use(cors());
     }
 
-    private initializeController(controllers) {
-      controllers.forEach((controller) => {
+    private initializeController(controllers:any):void {
+      controllers.forEach((controller:any) => {
         this.app.use('/', controller.router);
       });
     }
 
-    public listen() {
+    public listen():void {
       this.app.listen(this.port, () => {
         console.log(`This service listening on port ${this.port}`);
       });

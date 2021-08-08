@@ -1,10 +1,10 @@
-import express, { Request, Response, Router } from 'express';
+import { Request, Response, Router } from 'express';
 import { Quotes } from './quotes.types';
 
-class QuotesController {
+export default class QuotesController {
     public path = '/quotes';
 
-    public router: Router = express.Router();
+    public router: Router = Router();
 
     private quotes: Quotes[] = [
       {
@@ -27,9 +27,7 @@ class QuotesController {
       this.router.get(this.path, this.getAll);
     }
 
-    getAll = (req: Request, res: Response) => {
+    getAll = (req: Request, res: Response):void => {
       res.send(this.quotes);
     }
 }
-
-export default QuotesController;
