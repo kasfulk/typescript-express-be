@@ -15,12 +15,12 @@ class QuotesController {
       {
         id: 2,
         author: 'Puan Maharani',
-        conten: 'Kepak Sayap Kebhinekaan',
+        content: 'Kepak Sayap Kebhinekaan',
       },
     ];
 
     constructor() {
-
+      this.initializeRoutes();
     }
 
     public initializeRoutes(): void {

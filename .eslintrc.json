@@ -14,7 +14,21 @@
     "plugins": [
         "@typescript-eslint"
     ],
-    "rules": {
-        "no-console":"off"
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"
+                ],
+                "extensions": [".js", ".ts", ".d.ts", ".tsx"
+                ]
+            }
+        }
+    },   
+      "rules": { 
+          "no-console": "off",
+          "linebreak-style": "off",
+          "no-use-before-define" : "off",
+          "@typescript-eslint/no-use-before-define": "warn",
+          "import/extensions": "off"
     }
 }

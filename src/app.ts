@@ -6,7 +6,7 @@ export default class App {
 
     public port: number;
 
-    constructor(controllers, port) {
+    constructor(controllers, port:number) {
       this.app = express();
       this.port = port;
 
