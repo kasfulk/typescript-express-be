@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "main": "src/server.ts",
   "scripts": {
-    "build": "tsc && tsc-alias",
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "start": "npm run build && node dist/src/server.js",
+    "dev": "nodemon -w src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

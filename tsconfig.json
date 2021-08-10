@@ -4,7 +4,7 @@
     "target": "esnext",
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "dist/",
     "esModuleInterop": true,
     "allowJs": true,
     "lib": [
@@ -28,6 +28,6 @@
     "tests/**/*.spec.ts"
   ],
   "files": [
-    "src/app.ts"
+    "src/server.ts"
   ]
 }
