@@ -11,10 +11,11 @@
       "dom",
       "es6"
     ],
-    "baseUrl": "./src",
+    "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
-      "@/*": [
-        "./*"
+      "@services/*": [
+        "src/services/*"
       ]
     }
   },
