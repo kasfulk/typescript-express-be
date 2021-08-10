@@ -14,21 +14,12 @@
     "plugins": [
         "@typescript-eslint"
     ],
-    "settings": {
-        "import/resolver": {
-            "node": {
-                "paths": ["src"
-                ],
-                "extensions": [".js", ".ts", ".d.ts", ".tsx"
-                ]
-            }
-        }
-    },   
       "rules": { 
           "no-console": "off",
           "linebreak-style": "off",
           "no-use-before-define" : "off",
           "@typescript-eslint/no-use-before-define": "warn",
+          "import/no-unresolved": "off",
           "import/extensions": "off"
     }
 }

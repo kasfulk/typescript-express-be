@@ -20,17 +20,17 @@ export default class JalanController {
       const [rows, fields] = await pool.execute('SELECT * FROM jalan');
 
       res.send({
-        fields:fields.map(field => field.name),
+        fields: fields.map((field) => field.name),
         data: rows,
       });
     }
 
     getId = async (req: Request, res: Response): Promise<void> => {
       const { id } = req.params;
-      const [rows, fields] = await pool.execute(`SELECT * FROM jalan WHERE id_jalan = ?`,[id]);
-      
+      const [rows, fields] = await pool.execute('SELECT * FROM jalan WHERE id_jalan = ?', [id]);
+
       res.send({
-        fields:fields.map(field => field.name),
+        fields: fields.map((field) => field.name),
         data: rows,
       });
     }
