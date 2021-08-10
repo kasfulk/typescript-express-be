@@ -1,3 +1,4 @@
+import 'module-alias/register';
 import dotenv from 'dotenv';
 import App from './app';
 import QuotesController from './handlers/quotes/quotes.controller';
