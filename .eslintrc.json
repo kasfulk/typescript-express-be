@@ -20,6 +20,7 @@
           "no-use-before-define" : "off",
           "@typescript-eslint/no-use-before-define": "warn",
           "import/no-unresolved": "off",
-          "import/extensions": "off"
+          "import/extensions": "off",
+          "camelcase":"off"
     }
 }
