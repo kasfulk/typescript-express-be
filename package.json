@@ -4,7 +4,7 @@
   "main": "src/server.ts",
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.json",
-    "start": "nodemon src/server.ts",
+    "start": "ts-node src/server.ts",
     "dev": "nodemon -w src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +16,8 @@
     "mysql2": "^2.3.0"
   },
   "_moduleAliases": {
-    "@services": "src/services"
+    "@services": "src/services",
+    "@handler": "src/handlers"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",

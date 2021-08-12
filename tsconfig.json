@@ -16,6 +16,9 @@
     "paths": {
       "@services/*": [
         "src/services/*"
+      ],
+      "@handlers/*": [
+        "src/handlers/*"
       ]
     }
   },

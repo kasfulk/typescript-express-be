@@ -1,37 +1,20 @@
-import { Request, Response, Router } from 'express';
-import pool from '@services/db';
+import { Router } from 'express';
+import JalanServices from './jalan.services';
 // import { JalanTypes } from './jalan.types';
 
 export default class JalanController {
-    public path = '/jalan';
+  public path = '/jalan';
 
-    public router: Router = Router();
+  public router: Router = Router();
 
-    constructor() {
-      this.initializeRoutes();
-    }
+  private jalanService: JalanServices = new JalanServices();
 
-    public initializeRoutes(): void {
-      this.router.get(this.path, this.getAll);
-      this.router.get(`${this.path}/:id`, this.getId);
-    }
+  constructor() {
+    this.initializeRoutes();
+  }
 
-    getAll= async (req: Request, res: Response): Promise<void> => {
-      const [rows, fields] = await pool.execute('SELECT * FROM jalan');
-
-      res.send({
-        fields: fields.map((field) => field.name),
-        data: rows,
-      });
-    }
-
-    getId = async (req: Request, res: Response): Promise<void> => {
-      const { id } = req.params;
-      const [rows, fields] = await pool.execute('SELECT * FROM jalan WHERE id_jalan = ?', [id]);
-
-      res.send({
-        fields: fields.map((field) => field.name),
-        data: rows,
-      });
-    }
+  public initializeRoutes(): void {
+    this.router.get(this.path, this.jalanService.getAll);
+    this.router.get(`${this.path}/:id`, this.jalanService.getId);
+  }
 }
