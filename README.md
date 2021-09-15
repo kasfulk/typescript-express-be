@@ -4,8 +4,9 @@ Typescript + Express simple starter
 clone this repository
 change directory to cloned repository
 
-set environment from .env.example
+set environment from ```.env.example```
 
+run this command
 ```npm install```
 
 for development
