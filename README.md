@@ -6,10 +6,10 @@ change directory to cloned repository
 
 set environment from .env.example
 
-```npm install
+```npm install```
 
 for development
-```npm run dev
+```npm run dev```
 
 for production
-```npm run start
+```npm run start```
